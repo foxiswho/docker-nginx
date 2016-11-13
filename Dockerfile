@@ -8,6 +8,7 @@ RUN rm -rf /etc/localtime \
 && echo "alias ll='ls -lhG --color=auto'" >> /root/.bashrc \
 && . /root/.bashrc
 
-#RUN sed '1i\fastcgi_param  SCRIPT_FILENAME    \$document_root\$fastcgi_script_name;' /etc/nginx/fastcgi_params > /etc/nginx/fastcgi \
+RUN sed '1i\fastcgi_param  SCRIPT_FILENAME    \$document_root\$fastcgi_script_name;' /etc/nginx/fastcgi_params > /etc/nginx/fastcgi
+
 #&& sed 's:include /etc/nginx/conf:#include /etc/nginx/conf:g;' /etc/nginx/include /etc/nginx/conf \
 #&& sed "s:conf;:conf;\ninclude /Volumes/work/vhost/\*.conf;" /etc/nginx/include /etc/nginx/conf
