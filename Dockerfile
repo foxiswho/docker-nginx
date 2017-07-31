@@ -21,7 +21,7 @@ RUN sed '1i\fastcgi_param  SCRIPT_FILENAME    \$document_root\$fastcgi_script_na
 COPY conf/other.sh /root/other.sh
 COPY conf/default.conf /www/vhost/
 COPY conf/index.html /www/wwwroot/
-RUN chmod +x /root/other.sh \
-&& ln -s /root/other.sh /other.sh
+RUN chmod +x /root/docker-entrypoint.sh \
+&& ln -s /root/docker-entrypoint.sh /docker-entrypoint.sh
 
 ENTRYPOINT ["/root/other.sh"]
