@@ -22,6 +22,7 @@ COPY conf/docker-entrypoint.sh /root/docker-entrypoint.sh
 COPY conf/default.conf /www/vhost/
 COPY conf/index.html /www/wwwroot/
 RUN chmod +x /root/docker-entrypoint.sh \
-&& ln -s /root/docker-entrypoint.sh /docker-entrypoint.sh
+&& ln -s /root/docker-entrypoint.sh /docker-entrypoint.sh \
+&& /root/docker-entrypoint.sh
 
-ENTRYPOINT ["/root/docker-entrypoint.sh"]
+#ENTRYPOINT ["/root/docker-entrypoint.sh"]
