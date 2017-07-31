@@ -65,4 +65,4 @@ else
     fi
 fi
 
-exit 1
+exec "$@"
