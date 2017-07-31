@@ -64,3 +64,5 @@ else
         sed -i "s:conf;:conf;\n    include /www/vhost/\*.conf;:g" /etc/nginx/nginx.conf
     fi
 fi
+
+exit 1
