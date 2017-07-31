@@ -48,7 +48,7 @@ else
         sed -i "s:conf;:conf;\n    include /www/vhost/\*.conf;:g" /etc/nginx/nginx.conf
 
     elif [ "$HOST_OS" = "mac" ]; then
-        // mac 系统
+        # mac 系统
         sed -i 's:include /etc/nginx/conf:#include /etc/nginx/conf:g;' /etc/nginx/nginx.conf
         sed -i "s:conf;:conf;\n    include /Volumes/work/vhost/\*.conf;:g" /etc/nginx/nginx.conf
 
