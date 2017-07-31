@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 # 用于手动操作,设置 nginx 配置文件目录为指定目
 
