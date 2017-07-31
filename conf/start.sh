@@ -65,6 +65,6 @@ else
     fi
 fi
 
-#exec "$@"
+exec "$@"
 
-/bin/sh -c 'nginx -g daemon off;'
+#/bin/sh -c 'nginx -g daemon off;'

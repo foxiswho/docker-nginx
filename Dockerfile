@@ -24,7 +24,7 @@ COPY conf/index.html /www/wwwroot/
 RUN chmod +x /root/start.sh \
 && ln -s /root/start.sh /start.sh
 
-#ENTRYPOINT ["/root/start.sh"]
-CMD ["/root/start.sh"]
+ENTRYPOINT ["/root/start.sh"]
+#CMD ["/root/start.sh"]
 
-#CMD ["nginx", "-g", "daemon off;"]
+CMD ["nginx", "-g", "daemon off;"]
