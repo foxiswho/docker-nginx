@@ -24,4 +24,4 @@ COPY conf/index.html /www/wwwroot/
 RUN chmod +x /root/other.sh \
 && ln -s /root/other.sh /other.sh
 
-ENTRYPOINT ["other.sh"]
+ENTRYPOINT ["/root/other.sh"]
