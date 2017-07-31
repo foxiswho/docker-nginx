@@ -24,4 +24,4 @@ COPY conf/index.html /www/wwwroot/
 RUN chmod +x /root/docker-entrypoint.sh \
 && ln -s /root/docker-entrypoint.sh /docker-entrypoint.sh
 
-ENTRYPOINT ["/root/other.sh"]
+ENTRYPOINT ["/root/docker-entrypoint.sh"]
