@@ -66,3 +66,5 @@ else
 fi
 
 #exec "$@"
+
+/bin/sh -c 'nginx -g daemon off;'
