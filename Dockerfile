@@ -18,7 +18,7 @@ RUN sed '1i\fastcgi_param  SCRIPT_FILENAME    \$document_root\$fastcgi_script_na
 #&& sed -i 's:include /etc/nginx/conf:#include /etc/nginx/conf:g;' /etc/nginx/nginx.conf \
 #&& sed -i "s:conf;:conf;\n    include /Volumes/work/vhost/\*.conf;:g" /etc/nginx/nginx.conf
 
-COPY conf/other.sh /root/other.sh
+COPY conf/docker-entrypoint.sh /root/docker-entrypoint.sh
 COPY conf/default.conf /www/vhost/
 COPY conf/index.html /www/wwwroot/
 RUN chmod +x /root/docker-entrypoint.sh \
