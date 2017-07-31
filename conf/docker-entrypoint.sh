@@ -39,8 +39,8 @@ else
     echo "$HOST_OS" > $file_host_os
     cat $file_host_os
 
-    // 第一次处理
-    // linux系统
+    # 第一次处理
+    # linux系统
     if [ "$HOST_OS" = "linux" ]; then
         # 加载宿主机 的目录,所以原目录要改变名称
         mv /www /www_backup
@@ -55,11 +55,11 @@ else
     elif [ "$HOST_OS" = "windows" ]; then
         # 加载宿主机 的目录,所以原目录要改变名称
         mv /www /www_backup
-        // windows 系统
+        # windows 系统
         sed -i 's:include /etc/nginx/conf:#include /etc/nginx/conf:g;' /etc/nginx/nginx.conf
         sed -i "s:conf;:conf;\n    include /www/vhost/\*.conf;:g" /etc/nginx/nginx.conf
     else
-        // 直接使用docker
+        # 直接使用docker
         sed -i 's:include /etc/nginx/conf:#include /etc/nginx/conf:g;' /etc/nginx/nginx.conf
         sed -i "s:conf;:conf;\n    include /www/vhost/\*.conf;:g" /etc/nginx/nginx.conf
     fi
