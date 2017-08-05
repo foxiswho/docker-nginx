@@ -43,22 +43,22 @@ else
     # linux系统
     if [ "$HOST_OS" = "linux" ]; then
         # 加载宿主机 的目录,所以原目录要改变名称
-        mv /www /www_backup
         sed -i 's:include /etc/nginx/conf:#include /etc/nginx/conf:g;' /etc/nginx/nginx.conf
         sed -i "s:conf;:conf;\n    include /www/vhost/\*.conf;:g" /etc/nginx/nginx.conf
 
     elif [ "$HOST_OS" = "mac" ]; then
+        mv /www_backup /www
         # mac 系统
         sed -i 's:include /etc/nginx/conf:#include /etc/nginx/conf:g;' /etc/nginx/nginx.conf
         sed -i "s:conf;:conf;\n    include /Volumes/work/vhost/\*.conf;:g" /etc/nginx/nginx.conf
 
     elif [ "$HOST_OS" = "windows" ]; then
         # 加载宿主机 的目录,所以原目录要改变名称
-        mv /www /www_backup
         # windows 系统
         sed -i 's:include /etc/nginx/conf:#include /etc/nginx/conf:g;' /etc/nginx/nginx.conf
         sed -i "s:conf;:conf;\n    include /www/vhost/\*.conf;:g" /etc/nginx/nginx.conf
     else
+        mv /www_backup /www
         # 直接使用docker
         sed -i 's:include /etc/nginx/conf:#include /etc/nginx/conf:g;' /etc/nginx/nginx.conf
         sed -i "s:conf;:conf;\n    include /www/vhost/\*.conf;:g" /etc/nginx/nginx.conf
